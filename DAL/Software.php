@@ -1,11 +1,11 @@
 <?php
     namespace DAL;
-    include_once 'C:\xampp\htdocs\lpadst1php2024\DAL\conexao.php';
-    include_once 'C:\xampp\htdocs\lpadst1php2024\MODEL\Software.php';
+    include_once 'D:\xampp\htdocs\lpadsphpt12024\DAL\conexao.php';
+    include_once 'C:\xampp\htdocs\lpadsphpt12024\MODEL\Software.php';
 
     class Software{
         public function Select() {
-            $sql = "Select * from software;"; 
+            $sql = "Select * from software;";
             $con = \DAL\Conexao::conectar(); 
             $registros = $con->query($sql);
             $con = \DAL\Conexao::desconectar();

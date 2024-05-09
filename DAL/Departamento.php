@@ -1,12 +1,12 @@
 <?php 
    namespace DAL; //Data Access Layer
-   include_once 'C:\xampp\htdocs\lpadst1php2024\DAL\conexao.php';
-   include_once 'C:\xampp\htdocs\lpadst1php2024\MODEL\Departamento.php';
+   include_once 'D:\xampp\htdocs\lpadsphpt12024\DAL\conexao.php';
+   include_once 'D:\xampp\htdocs\lpadsphpt12024\MODEL\Departamento.php';
 
    class Departamento{
       public function Select(){       
            
-         $sql = "Select * from departamento;"; 
+         $sql = "Select * from departamento;";
          $con = \DAL\Conexao::conectar(); 
          $registros = $con->query($sql);
          $con = \DAL\Conexao::desconectar(); 
