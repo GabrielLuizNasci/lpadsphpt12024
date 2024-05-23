@@ -25,8 +25,6 @@
       public function SelectId(int $id){}
       public function SelectDesc(string $descricao){}
 
-
-
    }
 
 ?>

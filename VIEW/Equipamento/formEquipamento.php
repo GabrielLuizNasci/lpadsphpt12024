@@ -22,20 +22,20 @@
         <div class="row">
             <form action="insEquip.php" method="POST" class="col s12">
                 <div class="input-field col s6">
-                <input placeholder="Informe a descrição do Equipamento" id="descricao" type="text" class="validate">
-                <label for="first_name">Descrição</label>
+                    <input placeholder="Informe a descrição do Equipamento" id="descricao" name="txtDesc" type="text" class="validate">
+                    <label for="first_name">Descrição</label>
                 </div>
                 <div class="input-field col s6">
-                <input placeholder="Informe o responsável pelo Equipamento" id="responsavel" type="text" class="validate">
-                <label for="first_name">Responsável</label>
+                    <input placeholder="Informe o responsável pelo Equipamento" id="responsavel" name="txtResp" type="text" class="validate">
+                    <label for="first_name">Responsável</label>
                 </div>
                 <div class="input-field col s6">
-                <input placeholder="Informe o Departamento" id="departamento" type="text" class="validate">
-                <label for="first_name">Departamento</label>
+                    <input placeholder="Informe o Departamento" id="departamento" name="txtDep" type="number" class="validate">
+                    <label for="first_name">Departamento</label>
                 </div>
                 <div class="input-field col s6">
-                <input placeholder="Informe a data da Compra" id="Compra" type="text" class="validate">
-                <label for="first_name">Data da Compra</label>
+                    <input placeholder="Informe a data da Compra" id="Compra" name="txtCompra" type="date" class="validate">
+                    <label for="first_name">Data da Compra</label>
                 </div>
                 <div class="brown lighten-3 center col s12">
                     <br>
@@ -45,9 +45,21 @@
                     <button class="waves-effect waves-light btn red" type="reset">
                         Limpar <i class="material-icons">clear_all</i>
                     </button>
-                    <button class="waves-effect waves-light btn blue" type="button" onclick="JavaScript:location.href='lstoperador2.php'">
+                    <button class="waves-effect waves-light btn blue" type="button" onclick="JavaScript:location.href='lstEquipamento.php'">
                         Voltar <i class="material-icons">arrow_back</i>
                     </button>
+
+                    <?php  // carregar lista no select option
+                        $bll = new \bll\bllTipoArea();
+                        $lstTipoArea = $bll->Select();
+                        ?>
+                        <?php
+                        foreach ($lstTipoArea as $tipoArea) {
+                        ?>
+                            <option value="<?php echo $tipoArea->getId(); ?>"><?php echo $tipoArea->getDescricao(); ?></option>
+                        <?php
+                        }
+                        ?>
                     <br>
                     <br>
                 </div>

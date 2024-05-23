@@ -1,9 +1,9 @@
 <?php
-   include_once 'D:\xampp\htdocs\lpadsphpt12024\BLL\Equipamento.php';
-   use \BLL\Equipamento;
+   include_once 'D:\xampp\htdocs\lpadsphpt12024\DAL\Departamento.php';
+   use \DAL\Departamento;
    
-   $bllEquip = new \BLL\Equipamento();
-   $lstEquip = $bllEquip->Select();
+   $dalDpto = new \DAL\Departamento();
+   $lstDpto = $dalDpto->Select(); 
 
 ?>
 
@@ -18,26 +18,20 @@
             
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar Equipamento usando DAL</title>
+    <title>Listar Departamento usando Model</title>
 </head>
 <body>
-    <h1>Listar Equipamento</h1>
+    <h1>Listar Departamento</h1>
     <table class="highlight">
         <tr>
             <th>ID</th>
             <th>Descrição</th>
-            <th>Responsável</th>
-            <th>Departamento</th>
-            <th>Compra</th>
         </tr>
         
-        <?php foreach($lstEquip as $equip) { ?>
+        <?php foreach($lstDpto as $dpto) { ?>
            <tr>
-              <td><?php echo $equip->getId(); ?></td>
-              <td><?php echo $equip->getDescricao();?></td>
-              <td><?php echo $equip->getResponsavel();?></td>
-              <td><?php echo $equip->getDepartamento();?></td>
-              <td><?php echo $equip->getCompra();?></td>
+              <td><?php echo $dpto->getId(); ?></td>
+              <td><?php echo $dpto->getDescricao();?></td>
            </tr>
         <?php } ?>
 
