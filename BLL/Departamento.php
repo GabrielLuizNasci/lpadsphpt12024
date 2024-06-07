@@ -6,7 +6,7 @@
     class Departamento{
         public function Select(){
             $dalDepto = new \DAL\Departamento();
-            return $dalDepto->
+            return $dalDepto->Select();
         }
     }
 ?>
